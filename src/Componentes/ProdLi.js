@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Table, TableContainer, TableHead, TableCell, TableBody, TableRow, Modal, Button, TextField } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import Select from 'react-select';
 
 
 const url = 'http://localhost:8088/api/prod/';
@@ -32,7 +33,7 @@ function ProdLi() {
   const [modalEditar, setModalEditar] = useState(false);
   const [modalEliminar, setModalEliminar] = useState(false);
   const [search, setSearch] = useState("")
-  
+
   const [productoSeleccionado, setProductoSeleccionado] = useState({
     nombre: ''
   })
@@ -96,9 +97,9 @@ function ProdLi() {
     results = data.filter((dato) =>
       dato.nombre.toLowerCase().includes(search.toLowerCase()))
   }
- 
 
-  
+
+
 
 
 
@@ -140,7 +141,9 @@ function ProdLi() {
       <h2 className='titulo2'>Lista de Productos</h2>
 
       <input value={search} onChange={searcher} type={'text'} placeholder={'buscar por nombre'} className='form-control'></input>
-      
+      <Select placeholder={'buscar por segmento Cliente'}
+      options={data.segCli}
+      />
       <table className='table table-striped table-hover mt-5 shadow-lg'>
         <thead>
           <tr className='bg-curso text-white' >
