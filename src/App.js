@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 
-import ProddLi from './Componentes/ProddLi';
-import ProductoList from './Componentes/ProductoList';
+
+import ProdLi from './Componentes/ProdLi';
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         </div>
       </nav>
 
-      <ProddLi/>
+      <ProdLi/>
     </div>
   );
 }

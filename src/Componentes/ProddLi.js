@@ -26,7 +26,10 @@ class ProddLi extends Component {
 
   }
   searcher = (e) => {
-    let valores = (e.target.value)
+    let valores = this.state.form.filter(this.state.form.nombre);
+    this.setState(
+      valores
+    )
 
 
     console.log(e.target.value)
@@ -110,9 +113,10 @@ class ProddLi extends Component {
       <div className="caja1">
         <h2 className='titulo2'>Lista de Productos</h2>
         <div className='buscador'>
-          <select name="tipo productos" className='form-control'>
+          <select name="tipo productos" className='form-control' onChange={this.searcher.bind(this)}>
             {this.state.data.map(elemento=>(
-              <option key={elemento.idProd} value={elemento.idProd}>{elemento.nombre}</option>
+              <option key={elemento.idProd} value={elemento.idProd}>{elemento.nombre} </option>
+              
             ))}
           </select>
           <input onChange={this.searcher} type="text" placeholder='buscar por tipo producto' className='form-control' />

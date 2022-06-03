@@ -13,7 +13,10 @@ const ProductoList = () => {
     const [search, setSearch] = useState("");
 
     //traer datos de la api
-    const url = 'http://localhost:8088/api/prod';
+    const url = 'http://localhost:8088/api/prod/';
+   
+       
+   
 
     const show = async () => {
         const response = await fetch(url);
@@ -31,14 +34,7 @@ const ProductoList = () => {
 
 
     //metodo de filtrado
-    /*let results =[]
-    if(!search){
-       results = prods
-    }else{
-       results= prods.filter((dato)=>
-        dato.nombre.toLowerCase().includes(search.toLocaleLowerCase())
-        )
-    }
+    /*-
     */
 
     const results = !search ? prods : prods.filter((dato) =>
